@@ -4,7 +4,7 @@ import API from "../utils/API";
 import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class Books extends Component {
   state = {
@@ -16,7 +16,7 @@ class Books extends Component {
   }
 
   loadBooks = () => {
-    API.getBooks()
+    API.getGoogleSearchBooks()
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
   };
@@ -36,7 +36,7 @@ class Books extends Component {
           </form>
         </Col>
         
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
            
             {this.state.books.length ? (
               <List>
