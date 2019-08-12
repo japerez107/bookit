@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Saved extends Component {
   state = {
     books: []
   };
@@ -29,14 +29,11 @@ class Books extends Component {
             <Jumbotron>
               <h1>Google Book Search</h1>
             </Jumbotron>
-            <form>
-            <h3>Book Search</h3>
-              <Input name="title" placeholder="Book" />
-              <FormBtn>Submit Book</FormBtn>
-            </form>
-          </Col>
+            </Col>
 
           <Col size="md-12 sm-12">
+          <h3>Saved Books</h3>
+
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
@@ -60,4 +57,4 @@ class Books extends Component {
   }
 }
 
-export default saved;
+export default Saved;
