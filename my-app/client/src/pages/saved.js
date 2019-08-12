@@ -4,7 +4,7 @@ import API from "../utils/API";
 import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class Books extends Component {
   state = {
@@ -24,20 +24,21 @@ class Books extends Component {
   render() {
     return (
       <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Jumbotron>
-            <h1>Google Book Search</h1>
-          </Jumbotron>
-          <form>
-          <h3>Book Search</h3>
-            <Input name="title" placeholder="Book" />
-            <FormBtn>Submit Book</FormBtn>
-          </form>
-        </Col>
-        
+        <Row>
+          <Col size="md-12">
+            <Jumbotron>
+              <h1>Google Book Search</h1>
+            </Jumbotron>
+            <form>
+            <h3>Book Search</h3>
+              <Input name="title" placeholder="Book" />
+              <FormBtn>Submit Book</FormBtn>
+            </form>
+          </Col>
           <Col size="md-6 sm-12">
-           
+            <Jumbotron>
+              <h1>Books On My List</h1>
+            </Jumbotron>
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
