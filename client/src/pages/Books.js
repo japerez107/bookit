@@ -8,7 +8,8 @@ import { Input, FormBtn } from "../components/Form";
 
 class Books extends Component {
   state = {
-    books: []
+    books: [],
+    bookSearch: ""
   };
 
   componentDidMount() {
@@ -20,6 +21,24 @@ class Books extends Component {
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
   };
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    API.getGoogleSearchBooks(this.state.bookSearch)
+      .then(res => this.setState({ books: res.data }))
+      .catch(err => console.log(err));
+  };
+
 
   render() {
     return (
@@ -37,18 +56,22 @@ class Books extends Component {
         </Col>
         
           <Col size="md-12 sm-12">
-           
+          
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <a href={"/books/" + book._id}>
+                  <ListItem key={book.id}>
+                    <a href={"/books/" + book.id}>
+                      
                       <strong>
-                        {book.title} by {book.author}
+                        { book.volumeInfo.title} by {book.volumeInfo.authors}
                       </strong>
                     </a>
+
+                    
                     <DeleteBtn />
                   </ListItem>
+
                 ))}
               </List>
             ) : (
@@ -57,6 +80,7 @@ class Books extends Component {
           </Col>
         </Row>
       </Container>
+
     );
   }
 }
