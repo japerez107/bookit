@@ -1,4 +1,4 @@
-# Mixtape (a Spotify extension APP)
+# Mixtape
 
 ## Table of Contents
 * [About](#about)
