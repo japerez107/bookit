@@ -1,4 +1,4 @@
-# Mixtape
+# Mixtape (a Spotify extension APP)
 
 ## Table of Contents
 * [About](#about)
@@ -30,27 +30,26 @@ Application is a Full-Stack MERN App:
 - NodeJS
 - express
 - React
-- Redux
 - MongoDB
 - Mongoose
-- Spotify API
+- Spotify API (OAuth 2.0)
 - Spotify Web API node
+- React Spotify Player
+- Bootstrap
 
 ## ScreenShots
 
 ![Login Page](./images/concert-this.png)
-- Screen Onload when you go to localhost 
+- 
 
 ![Logged In](./images/concert-this.png)
-- Screen when you want to leave an note on scraped story 
+-  
 
 ![Playlist](./images/concert-this.png)
-- Screen when you want to leave an note on scraped story 
+- 
 
 ![Banished](./images/schema.jpg)
-- Screen Onload when you go to localhost 
-
-
+- 
 
 
 ## Future Developments:
