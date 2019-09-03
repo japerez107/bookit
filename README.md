@@ -58,7 +58,7 @@ Application is a Full-Stack MERN App:
 - Create a second page to view Banished songs 
 
 
-## Authors and Contributors 
+## Authors 
 Nick S. 
 Kat L. 
 Kenyel B.
